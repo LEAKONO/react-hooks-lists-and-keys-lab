@@ -1,25 +1,35 @@
+
 import React from "react";
 
-function ProjectItem({ project }) {
+function ProjectItem({ name, about, technologies }) {
+
   return (
     <div className="project-item">
-      {project && (
-        <>
-          <h3>{project.name}</h3>
-          <p>{project.about}</p>
-          <div className="technologies">
-            {project.technologies &&
-              project.technologies.map((technology, index) => (
-                <span key={index}>{technology}</span>
-              ))}
-          </div>
-        </>
-      )}
+      <h3>{name}</h3>
+      <p>{about}</p>
+      <div className="technologies">
+        {technologies.map((technology)=> {
+          return <span key={technology}>{technology}</span>
+        })}
+      </div>
     </div>
   );
 }
 
 export default ProjectItem;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
